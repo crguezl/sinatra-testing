@@ -10,6 +10,7 @@ end
 get '/' do
   content_type :json
   puts settings.foo? # => true
-  puts settings.foo  # => 'bar'
+  puts settings.foo  # => {"bar"=>1, "chum"=>2}"
+  puts "settings.root = "+settings.root
   settings.foo.to_json
 end
