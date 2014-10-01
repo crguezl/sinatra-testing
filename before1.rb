@@ -7,6 +7,10 @@ before do
   request.path_info = '/foo/bar/baz'
 end
 
+after do
+  pp response.status
+end
+
 get '/foo/*' do
   pp @note #=> 'Hi!'
   pp params[:splat] #=> 'bar/baz'
