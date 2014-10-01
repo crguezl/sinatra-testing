@@ -15,12 +15,16 @@ get '/' do
   erb :tutu
 end
 
-get '/:value' do
+post '/chazam' do
   session[:value] = params[:value]
   erb :tutu
 end
+
 __END__
 @@tutu
   value = <%= session[:value] %><br/>
-  Go to <a href="/">Home</a><br/>
-  Go to <a href="/37">37</a>
+  Go <a href="/">Home</a><br/>
+  <form action="/chazam" method="post">
+  Number: <input type="number" name="value"><br>
+  <input type="submit" value="Submit">
+  </form>
